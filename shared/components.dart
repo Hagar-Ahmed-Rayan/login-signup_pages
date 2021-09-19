@@ -203,3 +203,169 @@ context
 
 );
 
+Widget item({
+
+required ImageProvider imag,
+
+required String title,
+
+required int comments,
+  required bool run,
+   bool? train,
+  context
+})=>Row(
+
+  children: [
+
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+
+      child: Container(
+        height: 120,
+        width:120,
+
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          image: DecorationImage(
+            image:imag,
+              fit: BoxFit.cover,
+          ),
+        ),
+      ),
+
+    ),
+
+    Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            run?  ElevatedButton(
+onPressed: () {},
+
+child:
+Text(
+
+'RUNNING',
+style: TextStyle(
+fontSize: 12.0,
+
+color: Colors.white,
+),
+),
+
+
+style: ElevatedButton.styleFrom(
+primary: Colors.green, // background
+//onPrimary: Colors.yellow,
+shape: RoundedRectangleBorder(
+
+borderRadius: BorderRadius.circular(27),
+// <-- Radius
+),
+),
+)  :Container(),
+
+
+            SizedBox(width: 12,),
+            ElevatedButton(
+              onPressed: () {},
+
+              child: Text(
+                'TRAINING',
+                style: TextStyle(
+                  fontSize: 12.0,
+
+                  color: Colors.white,
+                ),
+              ),
+
+              style: ElevatedButton.styleFrom(
+                primary: Colors.green, // background
+                //onPrimary: Colors.yellow,
+                shape: RoundedRectangleBorder(
+
+                  borderRadius: BorderRadius.circular(27),
+                  // <-- Radius
+                ),
+              ),
+            ),
+
+          ],
+
+        ),
+        SizedBox(height: 7,),
+        Container(
+          width: 205,
+          child: Text(title,
+            softWrap: true,
+            maxLines: 2,
+
+
+
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 17,
+
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        SizedBox(height: 16,),
+        Text('may 20,2021',
+          style: TextStyle(
+            color: Colors.grey,
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+
+          ),
+        ),
+        SizedBox(height: 5,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          //  crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            IconButton(
+              padding: EdgeInsets.zero,
+              constraints: BoxConstraints(),//remove padding
+              icon:  Icon(Icons.search_outlined),
+              color: Colors.black,
+              onPressed: () {
+
+              },
+            ),
+
+            Text('login'),
+            SizedBox(width: 16,),
+            IconButton(
+              padding: EdgeInsets.zero,
+
+              constraints: BoxConstraints(),
+              icon:  Icon(Icons.search_outlined),
+              color: Colors.black,
+              onPressed: () {
+
+              },
+            ),
+            Text(comments.toString()),
+          ],
+
+        ),
+      ],
+
+    ),
+
+
+
+
+
+
+
+
+  ],
+
+
+
+);
+
+
